@@ -1,0 +1,184 @@
+{
+    "info": {
+      "_postman_id": "1",
+      "name": "API",
+      "description": "Collection of API endpoints for managing smart school.",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Create Material",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Accept",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"material_type\": \"статья\",\n  \"status\": \"активный\",\n  \"title\": \"Пример материала\",\n  \"content\": \"Содержание материала\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/create-material",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "create-material"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Material",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8080/get-material?uuid={{uuid}}",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "get-material"
+            ],
+            "query": [
+              {
+                "key": "uuid",
+                "value": "{{uuid}}"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Update Material",
+        "request": {
+          "method": "PUT",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Accept",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"uuid\": \"{{uuid}}\",\n  \"material_type\": \"статья\",\n  \"status\": \"активный\",\n  \"title\": \"Обновленное название\",\n  \"content\": \"Обновленное содержание\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:8080/update-material",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "update-material"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get All Materials",
+        "request": {
+          "method": "GET",
+          "header": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            }
+          ],
+          "url": {
+            "raw": "http://localhost:8080/get-all-materials?material_type={{material_type}}&date_from={{date_from}}&date_to={{date_to}}&page={{page}}&limit={{limit}}",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "8080",
+            "path": [
+              "get-all-materials"
+            ],
+            "query": [
+              {
+                "key": "material_type",
+                "value": "{{material_type}}"
+              },
+              {
+                "key": "date_from",
+                "value": "{{date_from}}"
+              },
+              {
+                "key": "date_to",
+                "value": "{{date_to}}"
+              },
+              {
+                "key": "page",
+                "value": "{{page}}"
+              },
+              {
+                "key": "limit",
+                "value": "{{limit}}"
+              }
+            ]
+          }
+        },
+        "response": []
+      }
+    ],
+    "event": [],
+    "variable": [
+      {
+        "id": "uuid",
+        "value": "e5c7b0c6-4f36-4c47-805a-b07ed2ed76ee",
+        "type": "default"
+      },
+      {
+        "id": "material_type",
+        "value": "статья",
+        "type": "default"
+      },
+      {
+        "id": "date_from",
+        "value": "",
+        "type": "default"
+      },
+      {
+        "id": "date_to",
+        "value": "",
+        "type": "default"
+      },
+      {
+        "id": "page",
+        "value": "1",
+        "type": "default"
+      },
+      {
+        "id": "limit",
+        "value": "10",
+        "type": "default"
+      }
+    ]
+  }
+  
